@@ -7,7 +7,7 @@
 
 \section{Summary}
 Software Engineering graduate from the University of Greenwich building backend services and AI tooling in Python and
-TypeScript. Built a FastAPI forecasting service, a fully tested diagnostics CLI and a RAG-based research agent, and
+TypeScript. Built a FastAPI forecasting service, a Vitest-tested diagnostics CLI and a RAG-based research agent, and
 shipped production features to a live retail application.
 
 \section{Experience}
@@ -25,12 +25,12 @@ Systems, Information Visualisation and Big Data, Statistical Techniques with R.}
 \section{Projects}
 \project{Relay Doctor -- Agent Relay Diagnostics CLI}{TypeScript, Node.js, Vitest, JSON}
 \begin{itemize}
-  \item Built a command-line diagnostic tool detecting 3 classes of Agent Relay configuration drift -- conflicting
-        workspace pins, legacy directories and incomplete environment credentials.
-  \item Implemented log-pattern diagnosis with root-cause guidance and 4-state
-        PASS/\allowbreak WARN/\allowbreak FAIL/\allowbreak UNKNOWN classification, returning UNKNOWN rather than guessing on unrecognised input.
-  \item Wrote automated Vitest tests covering diagnostic behaviour, malformed configuration and secret
-        leakage, with secret redaction preventing credentials appearing in output.
+  \item Built a command-line diagnostic tool detecting 4 classes of Agent Relay configuration drift -- missing node
+        enrolment pins, legacy directories, cross-workspace conflicts and incomplete credentials.
+  \item Implemented log diagnosis for 8 known failure signatures with root-cause guidance and PASS/\allowbreak WARN/\allowbreak FAIL/\allowbreak UNKNOWN
+        classification, returning UNKNOWN rather than guessing on unrecognised input.
+  \item Wrote 42 automated Vitest tests covering drift checks, log diagnosis, CLI behaviour and hardening, with
+        redaction of 6 token formats and sensitive JSON fields.
 \end{itemize}
 
 \project{Retail Demand Forecasting and Inventory Planning System}{Python, Pandas, scikit-learn, statsmodels, SQL, FastAPI}
@@ -50,11 +50,12 @@ Systems, Information Visualisation and Big Data, Statistical Techniques with R.}
         unsupported responses.
 \end{itemize}
 
-\project{Fleo -- Flight Deal Alert Application}{TypeScript, web application development, API integration}
+\project{Fleo -- Flight Deal Alert Application}{TypeScript, Next.js, React, PostgreSQL, Drizzle ORM, Supabase, Vitest}
 \begin{itemize}
-  \item Contributed user-facing workflows to a team-built flight-deal alert application that helps travellers find
-        relevant offers and receive timely notifications.
-  \item Worked across flight-data integration and application logic to keep deal alerts timely and relevant.
+  \item Built a fare-tracking web app monitoring 360 routes that flags fares at least 40\% below a 30-day median
+        baseline, with a cold-start guard against unreliable baselines.
+  \item Implemented server-side free/premium gating, magic-link authentication and a rate-limited flight-data API
+        client with retry backoff, backed by 66 Vitest tests.
 \end{itemize}
 
 \section{Technical Skills}
